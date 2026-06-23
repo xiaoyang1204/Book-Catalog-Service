@@ -1,0 +1,17 @@
+server:
+  port: 8080
+
+spring:
+  application:
+    name: book-catalog-service
+  datasource:
+    url: jdbc:mysql://124.222.203.235:3306/mydb?useSSL=false&serverTimezone=Asia/Shanghai&allowPublicKeyRetrieval=true&characterEncoding=UTF-8
+    driver-class-name: com.mysql.cj.jdbc.Driver
+    username: myuser
+    password: mypass123
+
+mybatis:
+  mapper-locations: classpath:com/example/bookcatalog/repository/*.xml
+  type-aliases-package: com.example.bookcatalog.domain.entity
+  configuration:
+    map-underscore-to-camel-case: true

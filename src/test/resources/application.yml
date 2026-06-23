@@ -1,0 +1,19 @@
+server:
+  port: 0
+
+spring:
+  datasource:
+    url: jdbc:h2:mem:testdb;DB_CLOSE_DELAY=-1;MODE=MySQL
+    driver-class-name: org.h2.Driver
+    username: sa
+    password:
+  sql:
+    init:
+      schema-locations: classpath:db/migration/V1__create_books_table.sql
+      mode: always
+
+mybatis:
+  mapper-locations: classpath:com/example/bookcatalog/repository/*.xml
+  type-aliases-package: com.example.bookcatalog.domain.entity
+  configuration:
+    map-underscore-to-camel-case: true
